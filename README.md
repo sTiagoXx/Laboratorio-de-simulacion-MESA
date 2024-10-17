@@ -1,7 +1,7 @@
 # Laboratorio-de-simulacion-MESA
-[1.)Simulación y Análisis de una Cola M/M/1/K/INF en NetLogo <br> <br> 2.)Comparación entre Resultados Simulados y Teóricos bajo Diferentes Condiciones ](DiscreteEventSimulationQueuesandServers.pdf) <br>
-<br>
-3.)  Simulación de la cola M/M/1/k/INF (MESA)<br>
+[1.)Simulación y Análisis de una Cola M/M/1/K/INF en NetLogo  2.)Comparación entre Resultados Simulados y Teóricos bajo Diferentes Condiciones ](DiscreteEventSimulationQueuesandServers.pdf)
+
+3.)  Simulación de la cola M/M/1/k/INF (MESA)
 
 
 ## Simulación de Cola M/M/1 
@@ -120,6 +120,7 @@ server.launch()
 [4.) Paradigma de programación por eventos] (ParadigmaDeProgramacionPorEventos.pdf)
  <br>
 ## Simulación de un Enlace Simple: Análisis del Paradigma de Programación por Eventos
+
 
 
 ```c++
