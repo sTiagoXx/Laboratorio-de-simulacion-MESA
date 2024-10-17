@@ -1,6 +1,6 @@
 ## Integrantes
-Darien Guzman Parra<br>
-Cristian Bello<br>
+Darien Parra Guzman<br>
+Cristian Bello Cuesta<br>
 Samuel Chaves Mora <br>
 Santiago Ruiz Rangel<br>
 # Laboratorio-de-simulacion-MESA
