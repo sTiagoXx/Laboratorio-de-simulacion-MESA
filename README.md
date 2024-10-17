@@ -111,5 +111,5 @@ server = ModularServer(
 )
 server.port = 8521  # Puerto por defecto
 server.launch()
-
+```
 <br> [4.) Paradigma de programación por eventos](ParadigmaDeProgramacionPorEventos.pdf)
