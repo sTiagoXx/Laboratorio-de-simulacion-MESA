@@ -2,7 +2,7 @@
 
 [1.) Simulación y Análisis de una Cola M/M/1/K/INF en NetLogo](DiscreteEventSimulationQueuesandServers.pdf)  
 [2.) Comparación entre Resultados Simulados y Teóricos bajo Diferentes Condiciones](DiscreteEventSimulationQueuesandServers.pdf)  
-[3.) Simulación de la cola M/M/1/K/INF (MESA)](DiscreteEventSimulationQueuesandServers.pdf)  
+[3.) Simulación de la cola M/M/1/K/INF (MESA)]
 
 ## Simulación de Cola M/M/1 
 
