@@ -1,5 +1,5 @@
 ## Integrantes
-Darien Esteban Parra<br>
+Darien Guzman Parra<br>
 Cristian Bello<br>
 Samuel Chaves Mora <br>
 Santiago Ruiz Rangel<br>
