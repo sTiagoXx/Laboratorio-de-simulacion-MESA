@@ -115,6 +115,7 @@ server.launch()
 <br> [4.) Paradigma de programación por eventos](ParadigmaDeProgramacionPorEventos.pdf)
 ## Simulación de un Enlace Simple: Análisis del Paradigma de Programación por Eventos
 ```c++
+
 #include "ns3/core-module.h"
 #include "ns3/network-module.h"
 #include "ns3/internet-module.h"
@@ -123,10 +124,12 @@ server.launch()
 
 using namespace ns3;
 
+
 NS_LOG_COMPONENT_DEFINE ("SimulacionEcoUDP");
 
 int main (int argc, char *argv[])
 {
+   
     LogComponentEnable ("SimulacionEcoUDP", LOG_LEVEL_INFO);
     LogComponentEnable ("UdpEchoClientApplication", LOG_LEVEL_INFO);
     LogComponentEnable ("UdpEchoServerApplication", LOG_LEVEL_INFO);
@@ -175,4 +178,6 @@ int main (int argc, char *argv[])
 
     return 0;
 }
+
+
 
