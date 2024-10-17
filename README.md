@@ -1,11 +1,10 @@
 # Laboratorio-de-simulacion-MESA
-[1.)Simulación y Análisis de una Cola M/M/1/K/INF en NetLogo  2.)Comparación entre Resultados Simulados y Teóricos bajo Diferentes Condiciones ](DiscreteEventSimulationQueuesandServers.pdf)
 
-3.)  Simulación de la cola M/M/1/k/INF (MESA)
-
+[1.) Simulación y Análisis de una Cola M/M/1/K/INF en NetLogo](DiscreteEventSimulationQueuesandServers.pdf)  
+[2.) Comparación entre Resultados Simulados y Teóricos bajo Diferentes Condiciones](DiscreteEventSimulationQueuesandServers.pdf)  
+[3.) Simulación de la cola M/M/1/K/INF (MESA)](DiscreteEventSimulationQueuesandServers.pdf)  
 
 ## Simulación de Cola M/M/1 
-
 
 ```python
 from mesa import Agent, Model
@@ -19,18 +18,17 @@ import random
 
 # --- AGENTE DEL CLIENTE ---
 class Client(Agent):
-    def _init_(self, unique_id, model):
-        super()._init_(unique_id, model)
+    def __init__(self, unique_id, model):
+        super().__init__(unique_id, model)
         self.in_queue = True  # Indica si el cliente está en la cola
 
     def step(self):
         pass  # Los clientes no hacen nada, solo esperan en la cola
 
-
 # --- AGENTE DEL SERVIDOR ---
 class Server(Agent):
-    def _init_(self, unique_id, model):
-        super()._init_(unique_id, model)
+    def __init__(self, unique_id, model):
+        super().__init__(unique_id, model)
         self.busy = False
         self.service_time_left = 0
 
@@ -46,10 +44,9 @@ class Server(Agent):
             self.busy = True
             self.service_time_left = int(random.expovariate(1 / self.model.mean_service_time))
 
-
 # --- MODELO ---
 class QueueModel(Model):
-    def _init_(self, num_servers=1, mean_arrival_rate=1.0, mean_service_time=1.0, max_run_time=1000):
+    def __init__(self, num_servers=1, mean_arrival_rate=1.0, mean_service_time=1.0, max_run_time=1000):
         self.num_servers = num_servers
         self.mean_arrival_rate = mean_arrival_rate
         self.mean_service_time = mean_service_time
@@ -88,7 +85,6 @@ class QueueModel(Model):
         if self.current_time >= self.max_run_time:
             self.running = False
 
-
 # --- CONFIGURAR EL SERVIDOR ---
 def agent_portrayal(agent):
     if isinstance(agent, Server):
@@ -115,76 +111,3 @@ server = ModularServer(
 )
 server.port = 8521  # Puerto por defecto
 server.launch()
-```
-<br>
-[4.) Paradigma de programación por eventos] (ParadigmaDeProgramacionPorEventos.pdf)
- <br>
-## Simulación de un Enlace Simple: Análisis del Paradigma de Programación por Eventos
-
-
-
-```c++
-#include "ns3/core-module.h"
-#include "ns3/network-module.h"
-#include "ns3/internet-module.h"
-#include "ns3/point-to-point-module.h"
-#include "ns3/applications-module.h"
-
-using namespace ns3;
-
-
-NS_LOG_COMPONENT_DEFINE ("SimulacionEcoUDP");
-
-int main (int argc, char *argv[])
-{
-   
-    LogComponentEnable ("SimulacionEcoUDP", LOG_LEVEL_INFO);
-    LogComponentEnable ("UdpEchoClientApplication", LOG_LEVEL_INFO);
-    LogComponentEnable ("UdpEchoServerApplication", LOG_LEVEL_INFO);
-
-    Time::SetResolution (Time::NS);
-
-    NS_LOG_INFO ("Iniciando simulación de Eco UDP...");
-    NS_LOG_INFO ("Creando 2 nodos: cliente y servidor...");
-    NodeContainer nodos;
-    nodos.Create (2);
-
-    PointToPointHelper configEnlace;
-    configEnlace.SetDeviceAttribute ("DataRate", StringValue ("5Mbps"));
-    configEnlace.SetChannelAttribute ("Delay", StringValue ("2ms"));
-
-    NetDeviceContainer dispositivos;
-    dispositivos = configEnlace.Install (nodos);
-
-    InternetStackHelper pilaDeProtocolos;
-    pilaDeProtocolos.Install (nodos);
-
-    Ipv4AddressHelper direccionador;
-    direccionador.SetBase ("10.1.1.0", "255.255.255.0");
-    Ipv4InterfaceContainer interfaces = direccionador.Assign (dispositivos);
-
-    NS_LOG_INFO ("Configurando servidor UDP en el puerto 9");
-    UdpEchoServerHelper servidor (9);
-    ApplicationContainer appsServidor = servidor.Install (nodos.Get (1));
-    appsServidor.Start (Seconds (1.0));
-    appsServidor.Stop (Seconds (10.0));
-
-    NS_LOG_INFO ("Configurando cliente UDP para enviar 3 paquetes");
-    UdpEchoClientHelper cliente (interfaces.GetAddress (1), 9);
-    cliente.SetAttribute ("MaxPackets", UintegerValue (3));
-    cliente.SetAttribute ("Interval", TimeValue (Seconds (1.0)));
-    cliente.SetAttribute ("PacketSize", UintegerValue (1024));
-
-    ApplicationContainer appsCliente = cliente.Install (nodos.Get (0));
-    appsCliente.Start (Seconds (2.0));
-    appsCliente.Stop (Seconds (10.0));
-
-    NS_LOG_INFO ("Iniciando simulación de eco UDP...");
-    Simulator::Run ();
-    Simulator::Destroy ();
-    NS_LOG_INFO ("Simulación de eco UDP completada exitosamente.");
-
-    return 0;
-}
-```
-
