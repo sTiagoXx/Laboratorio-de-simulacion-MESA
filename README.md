@@ -117,7 +117,7 @@ server.port = 8521  # Puerto por defecto
 server.launch()
 ```
 <br>
-[4.) Paradigma de programación por eventos] (ParadigmaDeProgramacionPorEventos.pdf)
+[4.) Paradigma de programación por eventos] (ParadigmaDeProgramacionPorEventos.pdf) <br>
 ## Simulación de un Enlace Simple: Análisis del Paradigma de Programación por Eventos
 
 ```c++
