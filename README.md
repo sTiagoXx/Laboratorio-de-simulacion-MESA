@@ -2,6 +2,8 @@
 [1.)Simulación y Análisis de una Cola M/M/1/K/INF en NetLogo <br> <br> 2.)Comparación entre Resultados Simulados y Teóricos bajo Diferentes Condiciones ](DiscreteEventSimulationQueuesandServers.pdf) <br>
 <br>
 3.)  Simulación de la cola M/M/1/k/INF (MESA)<br>
+[4.) Paradigma de programación por eventos] (ParadigmaDeProgramacionPorEventos.pdf)
+
 ## Simulación de Cola M/M/1 
 
 
@@ -115,5 +117,4 @@ server.port = 8521  # Puerto por defecto
 server.launch()
 ```
 <br>
-[4.) Paradigma de programación por eventos](ParadigmaDeProgramacionPorEventos.pdf)
 
