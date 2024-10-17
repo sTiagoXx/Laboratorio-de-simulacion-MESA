@@ -115,4 +115,5 @@ server.port = 8521  # Puerto por defecto
 server.launch()
 ```
 <br>
-[4.) Paradigma de programacion por eventos](ParadigmaDeProgramaciónPorEventos.pdf) 
+[4. Paradigma de programación por eventos](ParadigmaDeProgramacionPorEventos.pdf)
+
