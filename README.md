@@ -1,3 +1,8 @@
+## Integrantes
+Darien Esteban Parra<br>
+Cristian Bello<br>
+Samuel Chaves Mora <br>
+Santiago Ruiz Rangel<br>
 # Laboratorio-de-simulacion-MESA
 
 [1.) Simulación y Análisis de una Cola M/M/1/K/INF en NetLogo](DiscreteEventSimulationQueuesandServers.pdf)  <br><br>
