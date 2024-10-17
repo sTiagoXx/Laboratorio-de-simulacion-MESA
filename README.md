@@ -1,8 +1,8 @@
 # Laboratorio-de-simulacion-MESA
 
-[1.) Simulación y Análisis de una Cola M/M/1/K/INF en NetLogo](DiscreteEventSimulationQueuesandServers.pdf)  
-[2.) Comparación entre Resultados Simulados y Teóricos bajo Diferentes Condiciones](DiscreteEventSimulationQueuesandServers.pdf)  
-[3.) Simulación de la cola M/M/1/K/INF (MESA)]
+[1.) Simulación y Análisis de una Cola M/M/1/K/INF en NetLogo](DiscreteEventSimulationQueuesandServers.pdf)  <br>
+[2.) Comparación entre Resultados Simulados y Teóricos bajo Diferentes Condiciones](DiscreteEventSimulationQueuesandServers.pdf)  <br>
+[3.) Simulación de la cola M/M/1/K/INF (MESA)]<br>
 
 ## Simulación de Cola M/M/1 
 
