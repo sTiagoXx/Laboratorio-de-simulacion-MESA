@@ -9,18 +9,17 @@ import random
 
 # --- AGENTE DEL CLIENTE ---
 class Client(Agent):
-    def _init_(self, unique_id, model):
-        super()._init_(unique_id, model)
+    def __init__(self, unique_id, model):
+        super().__init__(unique_id, model)
         self.in_queue = True  # Indica si el cliente está en la cola
 
     def step(self):
         pass  # Los clientes no hacen nada, solo esperan en la cola
 
-
 # --- AGENTE DEL SERVIDOR ---
 class Server(Agent):
-    def _init_(self, unique_id, model):
-        super()._init_(unique_id, model)
+    def __init__(self, unique_id, model):
+        super().__init__(unique_id, model)
         self.busy = False
         self.service_time_left = 0
 
@@ -36,10 +35,9 @@ class Server(Agent):
             self.busy = True
             self.service_time_left = int(random.expovariate(1 / self.model.mean_service_time))
 
-
 # --- MODELO ---
 class QueueModel(Model):
-    def _init_(self, num_servers=1, mean_arrival_rate=1.0, mean_service_time=1.0, max_run_time=1000):
+    def __init__(self, num_servers=1, mean_arrival_rate=1.0, mean_service_time=1.0, max_run_time=1000):
         self.num_servers = num_servers
         self.mean_arrival_rate = mean_arrival_rate
         self.mean_service_time = mean_service_time
@@ -78,7 +76,6 @@ class QueueModel(Model):
         if self.current_time >= self.max_run_time:
             self.running = False
 
-
 # --- CONFIGURAR EL SERVIDOR ---
 def agent_portrayal(agent):
     if isinstance(agent, Server):
@@ -87,7 +84,6 @@ def agent_portrayal(agent):
         portrayal = {"Shape": "rect", "w": 1, "h": 1, "Color": "blue"}
     return portrayal
 
-grid = MultiGrid(10, 10, False)
 chart = ChartModule([{"Label": "Queue Length", "Color": "Black"}, {"Label": "Server Utilization", "Color": "Red"}])
 
 model_params = {
@@ -99,9 +95,10 @@ model_params = {
 
 server = ModularServer(
     QueueModel,
-    [grid, chart],
+    [chart],  # No necesitamos un MultiGrid separado aquí
     "Queue Simulation",
     model_params
 )
+
 server.port = 8521  # Puerto por defecto
 server.launch()
