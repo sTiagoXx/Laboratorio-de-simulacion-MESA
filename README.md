@@ -120,6 +120,40 @@ server = ModularServer(
 server.port = 8521  # Puerto por defecto
 server.launch()
 ```
+# Simulación de Red con NS-3: Eco UDP
+
+Este proyecto es una simulación de red en *NS-3* que implementa una comunicación UDP sencilla entre dos nodos, uno actuando como cliente y el otro como servidor. La simulación está diseñada para modelar una interacción básica de red y observar el funcionamiento del protocolo UDP en un entorno controlado.
+
+## Descripción de la Simulación
+
+La simulación consta de los siguientes pasos:
+
+1. *Creación de Nodos*: Se crean dos nodos, uno para el cliente y otro para el servidor.
+2. *Configuración del Enlace*: Se establece un enlace punto a punto entre ambos nodos, con una velocidad de 5 Mbps y una latencia de 2 ms.
+3. *Asignación de Direcciones IP*: Se asignan direcciones IP a los nodos para permitir la comunicación entre ellos.
+4. *Instalación del Servidor UDP*: El servidor se configura para escuchar en el puerto 9 y responde a los paquetes recibidos (efecto de "eco").
+5. *Configuración del Cliente UDP*: El cliente envía tres paquetes de 1024 bytes al servidor en intervalos de 1 segundo, creando una interacción simple de envío y respuesta.
+
+## Requisitos
+
+- *NS-3*: Esta simulación requiere el simulador NS-3. Asegúrate de tenerlo instalado en tu sistema para ejecutar el programa.
+
+## Ejecución
+
+Para ejecutar la simulación, compila y ejecuta el programa dentro del entorno NS-3. Al iniciar, verás mensajes de log que muestran el proceso de envío y respuesta entre el cliente y el servidor.
+
+## Propósito
+
+Este proyecto es útil para:
+- Estudiar el comportamiento básico de una red UDP en un ambiente controlado.
+- Analizar tiempos de latencia y rendimiento de una conexión simple punto a punto.
+- Desarrollar habilidades en simulación de redes utilizando NS-3.
+
+## Créditos
+
+Este programa fue creado para demostrar el funcionamiento del protocolo UDP en una simulación de red sencilla utilizando NS-3.
+
+
 <br> [4.) Paradigma de programación por eventos](ParadigmaDeProgramacionPorEventos.pdf)
 ## Simulación de un Enlace Simple: Análisis del Paradigma de Programación por Eventos
 ```c++
@@ -186,37 +220,4 @@ int main (int argc, char *argv[])
 
     return 0;
 }
-
-# Simulación de Red con NS-3: Eco UDP
-
-Este proyecto es una simulación de red en *NS-3* que implementa una comunicación UDP sencilla entre dos nodos, uno actuando como cliente y el otro como servidor. La simulación está diseñada para modelar una interacción básica de red y observar el funcionamiento del protocolo UDP en un entorno controlado.
-
-## Descripción de la Simulación
-
-La simulación consta de los siguientes pasos:
-
-1. *Creación de Nodos*: Se crean dos nodos, uno para el cliente y otro para el servidor.
-2. *Configuración del Enlace*: Se establece un enlace punto a punto entre ambos nodos, con una velocidad de 5 Mbps y una latencia de 2 ms.
-3. *Asignación de Direcciones IP*: Se asignan direcciones IP a los nodos para permitir la comunicación entre ellos.
-4. *Instalación del Servidor UDP*: El servidor se configura para escuchar en el puerto 9 y responde a los paquetes recibidos (efecto de "eco").
-5. *Configuración del Cliente UDP*: El cliente envía tres paquetes de 1024 bytes al servidor en intervalos de 1 segundo, creando una interacción simple de envío y respuesta.
-
-## Requisitos
-
-- *NS-3*: Esta simulación requiere el simulador NS-3. Asegúrate de tenerlo instalado en tu sistema para ejecutar el programa.
-
-## Ejecución
-
-Para ejecutar la simulación, compila y ejecuta el programa dentro del entorno NS-3. Al iniciar, verás mensajes de log que muestran el proceso de envío y respuesta entre el cliente y el servidor.
-
-## Propósito
-
-Este proyecto es útil para:
-- Estudiar el comportamiento básico de una red UDP en un ambiente controlado.
-- Analizar tiempos de latencia y rendimiento de una conexión simple punto a punto.
-- Desarrollar habilidades en simulación de redes utilizando NS-3.
-
-## Créditos
-
-Este programa fue creado para demostrar el funcionamiento del protocolo UDP en una simulación de red sencilla utilizando NS-3.
 
